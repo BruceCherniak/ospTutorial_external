@@ -30,7 +30,7 @@ project(ospTutorial VERSION 1.0.0 LANGUAGES C CXX)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
 
-find_package(ospray 1.8.1 REQUIRED)
+find_package(ospray 1.8.2 REQUIRED)
 
 add_executable(ospTutorial ospTutorial.c)
 target_link_libraries(ospTutorial ospray::ospray)
