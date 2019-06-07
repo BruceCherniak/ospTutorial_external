@@ -36,4 +36,5 @@ add_executable(ospTutorial ospTutorial.c)
 target_link_libraries(ospTutorial ospray::ospray)
 
 add_executable(ospTutorialCpp ospTutorial.cpp)
+set_property(TARGET ospTutorialCpp PROPERTY CXX_STANDARD 11)
 target_link_libraries(ospTutorialCpp ospray::ospray)
