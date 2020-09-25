@@ -1,40 +1,15 @@
-## ========================================================================== ##
-## The MIT License (MIT)                                                      ##
-##                                                                            ##
-## Copyright (c) Jefferson Amstutz                                            ##
-##                                                                            ##
-## Permission is hereby granted, free of charge, to any person obtaining a    ##
-## copy of this software and associated documentation files (the "Software"), ##
-## to deal in the Software without restriction, including without limitation  ##
-## the rights to use, copy, modify, merge, publish, distribute, sublicense,   ##
-## and/or sell copies of the Software, and to permit persons to whom the      ##
-## Software is furnished to do so, subject to the following conditions:       ##
-##                                                                            ##
-## The above copyright notice and this permission notice shall be included in ##
-## in all copies or substantial portions of the Software.                     ##
-##                                                                            ##
-## THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR ##
-## IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,   ##
-## FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL    ##
-## THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER ##
-## LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING    ##
-## FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER        ##
-## DEALINGS IN THE SOFTWARE.                                                  ##
-## ========================================================================== ##
+## Copyright 2020 Jefferson Amstutz
+## SPDX-License-Identifier: MIT
 
 ## Project Configuration ##
 
 cmake_minimum_required(VERSION 3.1)
 
-project(ospTutorial VERSION 1.0.0 LANGUAGES C CXX)
+project(ospTutorial LANGUAGES C)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
 
-find_package(ospray 1.8.2 REQUIRED)
+find_package(ospray 2.0.0 REQUIRED)
 
 add_executable(ospTutorial ospTutorial.c)
 target_link_libraries(ospTutorial ospray::ospray)
-
-add_executable(ospTutorialCpp ospTutorial.cpp)
-set_property(TARGET ospTutorialCpp PROPERTY CXX_STANDARD 11)
-target_link_libraries(ospTutorialCpp ospray::ospray)
